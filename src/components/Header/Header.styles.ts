@@ -5,9 +5,9 @@ export const HeaderContainer = styled.header`
   display: flex;
   height: 3rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
   /* align-content: center; */
 
   /* background-color: #198347; */
@@ -15,11 +15,40 @@ export const HeaderContainer = styled.header`
 
   border-bottom: 1px solid ${props => props.theme.gray400};
 
+  .itensNav {
+    display: flex;
+    height: 3rem;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
   img {
-    width: 20px;
+    width: 25px;
+    height: 25px;
     /* height: 20px; */
     color: #198347;
   }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #imgProfile {
+    width: 35px;
+    height: 35px;
+  }
+
+  #moreOptionsProfile {
+    width: 20px;
+    height: 20px;
+  }
+
+  
 
   #logo{
     width: 2.5rem;
@@ -38,7 +67,7 @@ export const HeaderContainer = styled.header`
     border-radius: 6px;
     position: relative;
     height: 2rem;
-    width: 15rem;
+    width: 20rem;
   }
 
   input {
