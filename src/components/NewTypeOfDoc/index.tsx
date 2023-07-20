@@ -1,6 +1,6 @@
 import { Header } from "../Header";
 import { NewTypeOfDocContainer } from "./NewTypeOfDoc.styled";
-import moreOptionsDisable from '../../assets/icons/moreOptionsDisable.svg'
+import moreOptionsDisableBlack from '../../assets/icons/moreOptionsDisableBlack.svg'
 
 
 export function NewTypeOfDoc() {
@@ -15,18 +15,18 @@ export function NewTypeOfDoc() {
           <div className="miniHeader">
             <ul className="location">
               <li>Configurações</li>
-              <img src={moreOptionsDisable} alt="" />
+              <img src={moreOptionsDisableBlack} alt="" />
 
               <li>Tipos de Documentos</li>
-              <img src={moreOptionsDisable} alt="" />
+              <img src={moreOptionsDisableBlack} alt="" />
 
               <li className="destaque">Novo Tipo de Documento</li>
             </ul>
 
-            <ul>
-              <li><a href="#">Voltar</a></li>
+            <div className="finalizarAction">
+              <a href="#" className="destaque">Voltar</a>
               <button type="submit">Salvar Documento</button>
-            </ul>
+            </div>
           </div>
 
 

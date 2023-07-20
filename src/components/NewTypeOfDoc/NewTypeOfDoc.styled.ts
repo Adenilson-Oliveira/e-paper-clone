@@ -24,6 +24,11 @@ export const NewTypeOfDocContainer = styled.div`
       list-style: none;
       li, img {
         padding-right: 1rem;
+        font-size: 1.2rem;
+      }
+      img{
+        width: 25px;
+        height:25px;
       }
       
     }
@@ -32,7 +37,30 @@ export const NewTypeOfDocContainer = styled.div`
   .location {
     li {
       
-      width: 13rem;
+      width: 15rem;
+    }
+  }
+
+  .finalizarAction {
+    a{
+      text-decoration: none;
+      padding: 0 1rem;
+      font-size: 1.2rem;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 6px;
+      margin-right: 1rem;
+      
+    }
+    
+    button {
+      padding: 0 1rem;
+      color: ${props => props.theme.white};
+      background-color: ${props => props.theme.green500};
+      height: 40px;
+      border:none;
+      border-radius: 6px;
     }
   }
 
@@ -41,12 +69,12 @@ export const NewTypeOfDocContainer = styled.div`
 
     a{
       text-decoration: none;
-      color: black;
       padding: 0 1rem;
       font-size: 1.2rem;
       display: inline-block;
       height: 50px;
       line-height: 50px;
+      
     }
     
   }
@@ -54,16 +82,13 @@ export const NewTypeOfDocContainer = styled.div`
   .data{
     background-color: ${props => props.theme.green500};
     border-top-left-radius: 6px;
-    color: white;
-    /* border: 1px solid ${props => props.theme.gray500} */
+    color: ${props => props.theme.white};
   }
   
   .permitions {
     color: #000;
     border-top-right-radius: 6px;
     background-color: ${props => props.theme.gray300};
-    /* height: 30px; */
-    /* border: 1px solid ${props => props.theme.gray500} */
   }
 
   .section {
@@ -79,7 +104,8 @@ export const NewTypeOfDocContainer = styled.div`
 
     
     input[type="text"], select {
-      /* width: 30rem; */
+      padding-left: .5rem;
+      font-size: 1.1rem;
       max-width: 30rem;
       margin-bottom: 2rem;
       height: 2.5rem;
