@@ -114,15 +114,10 @@ export const NewTypeOfDocContainer = styled.div`
       outline: none;
     }
 
-    input[type="checkbox"] {
-      /* margin-bottom: 2rem; */
-    }
-
     .checkboxKeep {
       display: flex;
       flex-direction: row;
       align-items: center;
-      /* justify-content: center; */
       align-content: center;
     }
 

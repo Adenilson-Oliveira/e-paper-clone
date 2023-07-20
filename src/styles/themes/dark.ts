@@ -1,7 +1,6 @@
-export const defaultTheme = {
-  primary: 'purple',
-  secondary: 'orange',
+// implementar segundo tema na aplicação se tiver tempo
 
+export const defaultTheme = {
   white: 'white',
 
   backgroundcolor_theme: '#f0f2f7',

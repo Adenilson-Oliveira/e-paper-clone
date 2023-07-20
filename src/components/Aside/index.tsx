@@ -2,7 +2,6 @@ import { AsideContainer } from "./Aside.styles";
 import logo from '../../assets/logo-e-paper.svg'
 import dashboardIcon from '../../assets/icons/icon-dashboard.svg';
 import fileIcon from '../../assets/icons/files.svg'
-// import fileIcon from '../../assets/icons/icon-files.svg'
 import iconTasks from '../../assets/icons/icon-tasks.svg';
 import iconSearch from '../../assets/icons/search.svg';
 import iconUser from '../../assets/icons/user.svg';
