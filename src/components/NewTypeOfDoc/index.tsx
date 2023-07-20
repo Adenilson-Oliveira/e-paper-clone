@@ -44,7 +44,7 @@ export function NewTypeOfDoc() {
 
 
               <label htmlFor="numberProcess"></label>
-              <input type="text" name="numberProcess" value='00036/2022' />
+              <input type="text" name="numberProcess" value='00036/2022' onChange={() => { }} />
 
               <section className="checkboxKeep">
                 <input type="checkbox" name="keep" id="" />
@@ -61,8 +61,8 @@ export function NewTypeOfDoc() {
 
               <label htmlFor="metodoInsercao">Método de Inserção do Documento*</label>
               <select name="metodoInsercao" id="">
-                <option value=""></option>
                 <option value="scan">Scaner</option>
+                <option value=""></option>
               </select>
             </div>
 

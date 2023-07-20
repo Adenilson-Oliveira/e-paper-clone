@@ -37,7 +37,7 @@ export function Aside() {
           {configState && (<>
             <ul className="moreOptions">
               <li>Departamentos</li>
-              <li>Tipos de Documentos</li>
+              <li className="destaque">Tipos de Documentos</li>
               <li>Índices de Documentos</li>
               <li>Fluxos de Processo</li>
             </ul>

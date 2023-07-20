@@ -13,6 +13,10 @@ export const AsideContainer = styled.div`
 
   color: ${props => props.theme.white};
 
+  .destaque {
+    color: ${props => props.theme.yellow900}
+  }
+
   img {
     padding-top: 1rem;
   }
