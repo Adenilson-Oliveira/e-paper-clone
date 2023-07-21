@@ -114,6 +114,11 @@ export const NewTypeOfDocContainer = styled.div`
       outline: none;
     }
 
+    /* input[name="editNumberProcess"] {
+      max-width: 25rem;
+      margin-left: 2rem;
+    } */
+
     .checkboxKeep {
       display: flex;
       flex-direction: row;

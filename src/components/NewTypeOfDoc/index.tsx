@@ -16,26 +16,42 @@ const newTypeOfDocValidationSchema = zod.object({
   sign: zod.string().min(1, 'selecione o tipo de assinatura'),
   state: zod.string().min(1, 'selecione o estado'),
   visibility: zod.string().min(1, 'selecione a visibilidade'),
+  numberProcess: zod.string().optional()
 
 })
 
+type NewTypeOfDocFormData = zod.infer<typeof newTypeOfDocValidationSchema>
+
 export function NewTypeOfDoc() {
 
-  const { register, handleSubmit, formState, watch } = useForm({
+  const { register, handleSubmit, formState, watch, reset, setValue } = useForm<NewTypeOfDocFormData>({
     resolver: zodResolver(newTypeOfDocValidationSchema),
+    defaultValues: {
+
+    }
   });
 
   let { errors } = formState
 
   const darContinuedadeNaSequenciaAtual = watch('keep')
 
+  if (darContinuedadeNaSequenciaAtual) {
+    setValue("editNumberProcess", 7364)
+  }
+
   // if (!!errors) {
   //   console.log(errors)
   // }
 
   function createNewTypeOfDoc(data: any) {
-
+    alert(JSON.stringify(data))
     console.log(data)
+
+    // enviar dados para api
+  }
+
+  function resetForm() {
+    reset()
   }
 
   return (
@@ -56,7 +72,7 @@ export function NewTypeOfDoc() {
             </ul>
 
             <div className="finalizarAction">
-              <a href="#" className="destaque">Voltar</a>
+              <a href="#" className="destaque" onClick={() => { resetForm() }}>Voltar</a>
               <button type="submit">Salvar Documento</button>
             </div>
           </div>
@@ -128,13 +144,12 @@ export function NewTypeOfDoc() {
                 <option value="eletronica">Eletrônica</option>
               </select>
 
-              <label htmlFor="state">Estado</label>
+              <label htmlFor="state">Status</label>
               {errors.state && (<span className='validationError'>{`${errors.state.message}`}</span>)}
               <select {...register('state')} id="" >
                 <option value=""></option>
-                <option value="MG">MG</option>
-                <option value="BA">BA</option>
-                <option value="BA">SP</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
               </select>
 
               <label htmlFor="visibility">Disponível para Todos os Departamentos?</label>
