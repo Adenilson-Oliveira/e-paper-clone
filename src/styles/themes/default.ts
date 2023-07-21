@@ -26,4 +26,6 @@ export const defaultTheme = {
 
   gray500: '#c3c3c3',
 
+  red500: '#ff4040'
+
 }
