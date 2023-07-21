@@ -1,4 +1,4 @@
-import { AsideContainer } from "./Aside.styles";
+import { AsideContainer } from "./styles";
 import logo from '../../assets/logo-e-paper.svg'
 import dashboardIcon from '../../assets/icons/icon-dashboard.svg';
 import fileIcon from '../../assets/icons/files.svg'

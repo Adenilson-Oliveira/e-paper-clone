@@ -1,17 +1,49 @@
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from 'zod'
+
 import { Header } from "../Header";
-import { NewTypeOfDocContainer } from "./NewTypeOfDoc.styled";
+import { NewTypeOfDocContainer } from "./styles";
 import moreOptionsDisableBlack from '../../assets/icons/moreOptionsDisableBlack.svg'
 
+const newTypeOfDocValidationSchema = zod.object({
+  name: zod.string().min(2, 'Nome muito curto ou inválido'),
+  keep: zod.boolean(),
+  editNumberProcess: zod.number({ invalid_type_error: 'Digite o número de sequência' }).min(1, 'Digite o número de sequência'),
+  tramitacao: zod.string().min(1, 'Selecione a tramitação'),
+  modoInsercao: zod.string().min(1, 'Selecione o modo de inserção'),
+  vincularIndices: zod.string().min(1, 'Selecione Sim ou não'),
+  sign: zod.string().min(1, 'selecione o tipo de assinatura'),
+  state: zod.string().min(1, 'selecione o estado'),
+  visibility: zod.string().min(1, 'selecione a visibilidade'),
+
+})
 
 export function NewTypeOfDoc() {
+
+  const { register, handleSubmit, formState, watch } = useForm({
+    resolver: zodResolver(newTypeOfDocValidationSchema),
+  });
+
+  let { errors } = formState
+
+  const darContinuedadeNaSequenciaAtual = watch('keep')
+
+  // if (!!errors) {
+  //   console.log(errors)
+  // }
+
+  function createNewTypeOfDoc(data: any) {
+
+    console.log(data)
+  }
 
   return (
     <NewTypeOfDocContainer>
       <Header />
 
-
       <main>
-        <form >
+        <form onSubmit={handleSubmit(createNewTypeOfDoc)}>
           <div className="miniHeader">
             <ul className="location">
               <li>Configurações</li>
@@ -29,7 +61,6 @@ export function NewTypeOfDoc() {
             </div>
           </div>
 
-
           <div className="optionPages">
             <a className="data" href="#">Dados</a>
             <a className="permitions" href="#">Permissões</a>
@@ -38,57 +69,78 @@ export function NewTypeOfDoc() {
 
             <div>
 
-              <label htmlFor="name">Nome do Tipo de Documento*</label>
-              <input type="text" name="name" />
+              <label htmlFor="name">Nome do Tipo de Documento</label>
+              {errors.name && (<p className='validationError'>{`${errors.name.message}`}</p>)}
+              <input type="text" {...register('name')} />
 
 
-
-              <label htmlFor="numberProcess"></label>
-              <input type="text" name="numberProcess" value='00036/2022' onChange={() => { }} />
+              <label htmlFor="numberProcess">Número de processo atual</label>
+              <input
+                type="text"
+                value='7364/2022'
+                {...register('numberProcess')}
+              />
 
               <section className="checkboxKeep">
-                <input type="checkbox" name="keep" id="" />
+                <input
+                  type="checkbox"
+                  id=""
+                  {...register('keep')}
+                />
                 <label htmlFor="keep">Dar continuidade a número de processo?</label>
               </section>
 
+              {!darContinuedadeNaSequenciaAtual &&
+                <>
+                  {errors.editNumberProcess && (<span className='validationError'>{`${errors.editNumberProcess.message}`}</span>)}
+                  <input
+                    type="text"
+                    {...register('editNumberProcess', { valueAsNumber: true })}
+                  />
+                </>
+              }
 
-              <input type="text" name="EditNumberProcess" />
 
               <label htmlFor="tramitacao">Tramitação</label>
-              <select name="tramitacao" id="">
+              {errors.tramitacao && (<span className='validationError'>{`${errors.tramitacao.message}`}</span>)}
+              <select id="" {...register('tramitacao')}>
+                <option value=""></option>
                 <option value="ambas">Ambas</option>
+                <option value="atual">Atual</option>
               </select>
 
               <label htmlFor="metodoInsercao">Método de Inserção do Documento*</label>
-              <select name="metodoInsercao" id="">
-                <option value="scan">Scaner</option>
+              {errors.modoInsercao && (<span className='validationError'>{`${errors.modoInsercao.message}`}</span>)}
+              <select {...register('modoInsercao')} id="">
                 <option value=""></option>
+                <option value="scan">Scaner</option>
               </select>
             </div>
-
-
-
             <div>
-              <label htmlFor="vincularIndices">Vincular Índices ao Documento?*</label>
-              <select name="vincularIndices" id="">
+              <label htmlFor="vincularIndices">Vincular Índices ao Documento?</label>
+              <select {...register('vincularIndices')} id="">
                 <option value="true">Sim</option>
                 <option value="false">Não</option>
               </select>
 
               <label htmlFor="sign">Assinatura</label>
-              <select name="sign" id="">
+              <select {...register('sign')} id="">
                 <option value="eletronica">Eletrônica</option>
               </select>
 
-              <label htmlFor="state">Status</label>
-              <select name="state" id="" >
-                <option value="1">Selecione o item</option>
+              <label htmlFor="state">Estado</label>
+              {errors.state && (<span className='validationError'>{`${errors.state.message}`}</span>)}
+              <select {...register('state')} id="" >
+                <option value=""></option>
+                <option value="MG">MG</option>
+                <option value="BA">BA</option>
+                <option value="BA">SP</option>
               </select>
 
-              <label htmlFor="visibility">Disponível para Todos os Departamentos?*</label>
-              <select name="visibility" id="">
-                <option value="yes">Sim</option>
-                <option value="false">Sim</option>
+              <label htmlFor="visibility">Disponível para Todos os Departamentos?</label>
+              <select {...register('visibility')} id="">
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
               </select>
             </div>
 

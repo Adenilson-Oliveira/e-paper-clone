@@ -6,7 +6,7 @@ export const NewTypeOfDocContainer = styled.div`
   width: 100%;
 
   .destaque {
-    color: ${props => props.theme.green500}
+    color: ${props => props.theme.green500};
   }
 
   main{
@@ -144,4 +144,9 @@ export const NewTypeOfDocContainer = styled.div`
       }
       
     }
+
+  .validationError {
+    color: ${props => props.theme.red500};
+    font-size: .9rem;
+  }
 `

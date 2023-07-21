@@ -1,5 +1,5 @@
 
-import { HeaderContainer } from './Header.styles';
+import { HeaderContainer } from './styles';
 import logoPref from '../../assets/logoPref.svg'
 import lupa from '../../assets/icons/lupa.svg';
 import clock from '../../assets/icons/clock.svg';
