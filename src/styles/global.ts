@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -10,11 +10,11 @@ export const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: 0;
-    box-shadow: 0 0 0 2px ${props => props.theme.green500}
+    box-shadow: 0 0 0 2px ${(props) => props.theme.green500}
   }
 
   body {
-    background-color: ${props => props.theme.backgroundcolor_theme};
+    background-color: ${(props) => props.theme.backgroundcolor_theme};
   }
 
   body, input, textarea, button {
@@ -24,6 +24,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    background-color: ${props => props.theme.text_gray_500};
+    background-color: ${(props) => props.theme.text_gray_500};
   }
 `

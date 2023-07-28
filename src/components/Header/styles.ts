@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-
   display: flex;
   height: 3rem;
   display: flex;
@@ -13,7 +12,7 @@ export const HeaderContainer = styled.header`
   /* background-color: #198347; */
   width: 100%;
 
-  border-bottom: 1px solid ${props => props.theme.gray400};
+  border-bottom: 1px solid ${(props) => props.theme.gray400};
 
   .itensNav {
     display: flex;
@@ -48,22 +47,18 @@ export const HeaderContainer = styled.header`
     height: 20px;
   }
 
-  
-
-  #logo{
+  #logo {
     width: 2.5rem;
     height: 2.5rem;
   }
 
-  
-
   hr {
     height: 2rem;
-    color: ${props => props.theme.gray400};
+    color: ${(props) => props.theme.gray400};
   }
 
   form {
-    background-color: ${props => props.theme.gray400};
+    background-color: ${(props) => props.theme.gray400};
     border-radius: 6px;
     position: relative;
     height: 2rem;
@@ -78,14 +73,14 @@ export const HeaderContainer = styled.header`
     font-size: 1.2rem;
     border: none;
 
-    /* border: 1px solid ${props => props.theme.gray400}; */
-    padding-left: 3rem; 
+    /* border: 1px solid ${(props) => props.theme.gray400}; */
+    padding-left: 3rem;
   }
 
-  button{
+  button {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 50px;
     height: 100%;
     border-radius: 50%;
@@ -93,17 +88,10 @@ export const HeaderContainer = styled.header`
     border: none;
     background-color: transparent;
     font-size: 1.5rem;
-
-    
   }
 
   button:focus {
-      border: none;
-      outline: none;
-    }
-
-  
-
-
-
+    border: none;
+    outline: none;
+  }
 `

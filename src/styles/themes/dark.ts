@@ -27,5 +27,4 @@ export const defaultTheme = {
   gray400: 'rgb(156 163 175)',
 
   gray500: 'rgb(107 114 128)',
-
 }

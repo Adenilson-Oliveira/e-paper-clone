@@ -1,9 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const AsideContainer = styled.div`
-
-  background-color: ${props => props.theme.backgroundcolor_aside_theme};
-  
+  background-color: ${(props) => props.theme.backgroundcolor_aside_theme};
 
   width: 20%;
   max-width: 260px;
@@ -11,17 +9,17 @@ export const AsideContainer = styled.div`
   padding: 1rem;
   font-size: 1.1rem;
 
-  color: ${props => props.theme.white};
+  color: ${(props) => props.theme.white};
 
   .destaque {
-    color: ${props => props.theme.yellow900}
+    color: ${(props) => props.theme.yellow900};
   }
 
   img {
     padding-top: 1rem;
   }
 
-  nav{
+  nav {
     height: calc(100vh - 20%);
     display: flex;
     flex-direction: column;
@@ -52,13 +50,9 @@ export const AsideContainer = styled.div`
     #moreOptionsConfig {
       margin-left: 70px;
     }
-
   }
 
-  .moreOptions li{
-      
+  .moreOptions li {
     margin: 1rem 1rem;
-      
   }
-
 `

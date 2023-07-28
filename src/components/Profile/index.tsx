@@ -1,12 +1,7 @@
-
 interface ProfileProps {
-  urlImg: string;
+  urlImg: string
 }
 
 export function Profile({ urlImg }: ProfileProps) {
-
-
-  return (
-    <img src={urlImg}></img>
-  )
+  return <img src={urlImg}></img>
 }

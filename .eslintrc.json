@@ -1,0 +1,6 @@
+/* eslint-env node */
+// {
+//   "extends": [
+//     "@rocketseat/eslint-config/react"
+//   ]
+// }
