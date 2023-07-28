@@ -8,5 +8,4 @@ export function Profile({ urlImg }: ProfileProps) {
       <img src={urlImg} alt="img" />
     </>
   )
-
 }
