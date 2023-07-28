@@ -3,5 +3,10 @@ interface ProfileProps {
 }
 
 export function Profile({ urlImg }: ProfileProps) {
-  return <img src={urlImg}></img>
+  return (
+    <>
+      <img src={urlImg} alt="img" />
+    </>
+  )
+
 }
